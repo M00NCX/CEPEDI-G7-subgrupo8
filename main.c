@@ -49,12 +49,11 @@ double kilobytesParaMegabytes(double kb) { return kb / 1024; }
 
 int main()
 {
-    int categoria, unidadeOrigem, unidadeDestino;
-    double valor, resultado;
+    int categoria;
 
     do
     {
-        printf("\nEscolha a categoria de conversão:\n");
+        printf("\nEscolha a categoria de conversao:\n");
 
         scanf("%d", &categoria);
 
