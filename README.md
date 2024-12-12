@@ -1,1 +1,5 @@
-# CEPEDI-G7-subgrupo8
+# CEPEDI
+
+# Grupo 7 Subgrupo 8
+
+## Atividade 1
