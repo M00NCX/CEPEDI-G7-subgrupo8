@@ -1,69 +1,106 @@
 #include <stdio.h>
 
-// comprimento
-double metrosParaCentimetros(double metros) { return metros * 100; }
-double metrosParaMilimetros(double metros) { return metros * 1000; }
-double centimetrosParaMetros(double centimetros) { return centimetros / 100; }
-double centimetrosParaMilimetros(double centimetros) { return centimetros * 10; }
-double milimetrosParaMetros(double milimetros) { return milimetros / 1000; }
-double milimetrosParaCentimetros(double milimetros) { return milimetros / 10; }
-
-// massa
-double quilogramasParaGramas(double kg) { return kg * 1000; }
-double quilogramasParaToneladas(double kg) { return kg / 1000; }
-double gramasParaQuilogramas(double g) { return g / 1000; }
-double toneladasParaQuilogramas(double t) { return t * 1000; }
-
-// volume
-double litrosParaMililitros(double litros) { return litros * 1000; }
-double mililitrosParaLitros(double ml) { return ml / 1000; }
-
-// temperatura
-double celsiusParaFahrenheit(double c) { return (c * 9 / 5) + 32; }
-double celsiusParaKelvin(double c) { return c + 273.15; }
-double fahrenheitParaCelsius(double f) { return (f - 32) * 5 / 9; }
-double kelvinParaCelsius(double k) { return k - 273.15; }
-
-// velocidade
-double kmhParaMs(double kmh) { return kmh / 3.6; }
-double msParaKmh(double ms) { return ms * 3.6; }
-
-// potência
-double wattsParaQuilowatts(double w) { return w / 1000; }
-double quilowattsParaWatts(double kw) { return kw * 1000; }
-
-// área
-double metroQuadradoParaCentimetroQuadrado(double m2) { return m2 * 10000; }
-double centimetroQuadradoParaMetroQuadrado(double cm2) { return cm2 / 10000; }
-
-// tempo
-double segundosParaMinutos(double segundos) { return segundos / 60; }
-double minutosParaSegundos(double minutos) { return minutos * 60; }
-double minutosParaHoras(double minutos) { return minutos / 60; }
-double horasParaMinutos(double horas) { return horas * 60; }
-
-// armazenamento
-double bytesParaKilobytes(double bytes) { return bytes / 1024; }
-double kilobytesParaBytes(double kb) { return kb * 1024; }
-double kilobytesParaMegabytes(double kb) { return kb / 1024; }
-
-int main()
+double wattParaKilowatt(double watt)
 {
-    int categoria;
+    return watt / 1000.0;
+}
 
-    do
+double wattParaCV(double watt)
+{
+    return watt / 735.49875;
+}
+
+double kilowattParaWatt(double kilowatt)
+{
+    return kilowatt * 1000.0;
+}
+
+double kilowattParaCV(double kilowatt)
+{
+    return kilowatt / 0.73549875;
+}
+
+double cvParaWatt(double cv)
+{
+    return cv * 735.49875;
+}
+
+double cvParaKilowatt(double cv)
+{
+    return cvParaWatt(cv) / 1000.0;
+}
+
+void conversaoPotencia()
+{
+    int unidadeEntrada, unidadeConversao;
+    double valorEntrada, valorConvertido;
+
+    printf("Escolha a unidade de entrada:\n");
+    printf("1. Watt (W)\n");
+    printf("2. Kilowatt (kW)\n");
+    printf("3. Cavalo-vapor (CV)\n");
+
+    scanf("%d", &unidadeEntrada);
+
+    printf("Digite o valor a ser convertido: ");
+    scanf("%lf", &valorEntrada);
+
+    printf("\nEscolha a unidade para conversao:\n");
+    printf("1. Watt (W)\n");
+    printf("2. Kilowatt (kW)\n");
+    printf("3. Cavalo-vapor (CV)\n");
+    scanf("%d", &unidadeConversao);
+
+    if (unidadeEntrada == 1)
     {
-        printf("\nEscolha a categoria de conversao:\n");
-
-        scanf("%d", &categoria);
-
-        if (categoria == 0)
+        if (unidadeConversao == 1)
         {
-            printf("Saindo...\n");
-            break;
+            valorConvertido = valorEntrada;
         }
+        else if (unidadeConversao == 2)
+        {
+            valorConvertido = wattParaKilowatt(valorEntrada);
+        }
+        else if (unidadeConversao == 3)
+        {
+            valorConvertido = wattParaCV(valorEntrada);
+        }
+    }
+    else if (unidadeEntrada == 2)
+    {
+        if (unidadeConversao == 1)
+        {
+            valorConvertido = kilowattParaWatt(valorEntrada);
+        }
+        else if (unidadeConversao == 2)
+        {
+            valorConvertido = valorEntrada;
+        }
+        else if (unidadeConversao == 3)
+        {
+            valorConvertido = kilowattParaCV(valorEntrada);
+        }
+    }
+    else if (unidadeEntrada == 3)
+    {
+        if (unidadeConversao == 1)
+        {
+            valorConvertido = cvParaWatt(valorEntrada);
+        }
+        else if (unidadeConversao == 2)
+        {
+            valorConvertido = cvParaKilowatt(valorEntrada);
+        }
+        else if (unidadeConversao == 3)
+        {
+            valorConvertido = valorEntrada;
+        }
+    }
+    else
+    {
+        printf("Opcao de unidade de entrada invalida!\n");
+        return 1;
+    }
 
-    } while (categoria != 0);
-
-    return 0;
+    printf("\nValor convertido: %.3lf\n", valorConvertido);
 }
