@@ -28,7 +28,7 @@ O programa oferece uma interface simples que permite ao usuário escolher o tipo
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/SEU_USUARIO/CEPEDI-G7-subgrupo8.git
+    git clone https://github.com/M00NCX/CEPEDI-G7-subgrupo8.git
     ```
 
 2. Navegue até o diretório do projeto:
