@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// comprimento 1
+// comprimento
 double metrosParaCentimetros(double metros) { return metros * 100; }
 double metrosParaMilimetros(double metros) { return metros * 1000; }
 double centimetrosParaMetros(double centimetros) { return centimetros / 100; }
@@ -8,179 +8,328 @@ double centimetrosParaMilimetros(double centimetros) { return centimetros * 10; 
 double milimetrosParaMetros(double milimetros) { return milimetros / 1000; }
 double milimetrosParaCentimetros(double milimetros) { return milimetros / 10; }
 
-// massa 2
+// massa
 double quilogramasParaGramas(double kg) { return kg * 1000; }
 double quilogramasParaToneladas(double kg) { return kg / 1000; }
 double gramasParaQuilogramas(double g) { return g / 1000; }
 double toneladasParaQuilogramas(double t) { return t * 1000; }
 
-// volume 3
+// volume
 double litrosParaMililitros(double litros) { return litros * 1000; }
 double mililitrosParaLitros(double ml) { return ml / 1000; }
+double metrosCubicosParaLitros(double metrosCubicos) { return metrosCubicos * 1000; }
+double litrosParaMetrosCubicos(double litros) { return litros / 1000; }
+double centimetrosCubicosParaLitros(double cm3) { return cm3 / 1000.0; }
+double litrosParaCentimetrosCubicos(double litros) { return litros * 1000.0; }
 
-// temperatura 4
+// temperatura
 double celsiusParaFahrenheit(double c) { return (c * 9 / 5) + 32; }
 double celsiusParaKelvin(double c) { return c + 273.15; }
 double fahrenheitParaCelsius(double f) { return (f - 32) * 5 / 9; }
 double kelvinParaCelsius(double k) { return k - 273.15; }
 
-// velocidade 5
+// velocidade
 double kmhParaMs(double kmh) { return kmh / 3.6; }
 double msParaKmh(double ms) { return ms * 3.6; }
-double kmhParaMph(double kmh) {return kmh / 1.609;}
-double mphParaKmh(double mph) {return mph * 1.6;}
-double mphParaMs(double mph) {return mph * 0.44704;}
-double msParaMph(double ms) {return ms * 2.23694;}
 
-// potência 6
+// potência
 double wattsParaQuilowatts(double w) { return w / 1000; }
 double quilowattsParaWatts(double kw) { return kw * 1000; }
 
-// área 7
+// área
 double metroQuadradoParaCentimetroQuadrado(double m2) { return m2 * 10000; }
 double centimetroQuadradoParaMetroQuadrado(double cm2) { return cm2 / 10000; }
 
-// tempo 8
+// tempo
 double segundosParaMinutos(double segundos) { return segundos / 60; }
 double minutosParaSegundos(double minutos) { return minutos * 60; }
 double minutosParaHoras(double minutos) { return minutos / 60; }
 double horasParaMinutos(double horas) { return horas * 60; }
-double segundosParaHoras(double segundos) {return segundos / 3600;}
-double horasParaSegundos(double horas) {return horas * 3600;}
 
-// armazenamento 9
+// armazenamento
 double bytesParaKilobytes(double bytes) { return bytes / 1024; }
 double kilobytesParaBytes(double kb) { return kb * 1024; }
 double kilobytesParaMegabytes(double kb) { return kb / 1024; }
 
-void informarCategorias() {
-    printf("\nEscolha a categoria para conversão: \n");
-    printf("1. Comprimento\n");
-    printf("2. Massa\n");
-    printf("3. Volume\n");
-    printf("4. Temperatura\n");
-    printf("5. Velocidade\n");
-    printf("6. Potência\n");
-    printf("7. Área\n");
-    printf("8. Tempo\n");
-    printf("9. Armazenamento\n");
-    printf("0. Cancelar\n");
-}
+// 1 - Função separada para as conversões de comprimento
+void conversaoComprimento()
+{
+    int opcao;
+    double valor;
 
-void processarCategorias(int categoria) {
-    double entrada, resultado;
-    int subcategoria;
+    printf("\nEscolha o tipo de conversao de comprimento: \n");
+    printf("1. Metros para centimetros\n");
+    printf("2. Metros para milimetros\n");
+    printf("3. Centimetros para metros\n");
+    printf("4. Centimetros para milimetros\n");
+    printf("5. Milimetros para metros\n");
+    printf("6. Milimetros para centimetros\n");
+    scanf("%d", &opcao);
 
-    switch (categoria) {
-        //adicionem os outros cases
-        case 1:
-            break;
-
-        case 2:
-            break;
-
-        case 3:
-            break;
-
-        case 4:
-            break;
-
-        case 5: //velocidade 
-            printf("\n escolha a conversão que deseja realizar: \n");
-            printf("1. Km/h para m/s\n");
-            printf("2. m/s para Km/h\n");
-            printf("3. Km/h para Mp/h\n");
-            printf("4. Mp/h para Km/h\n");
-            printf("5. Mp/h para m/s\n");
-            printf("6. m/s para Mp/h\n");
-            scanf("%d", &subcategoria);
-
-            printf("digite o valor na unidade informada: \n");
-            scanf("%lf", &entrada);
-
-            switch (subcategoria) {
-                case 1: resultado = kmhParaMs(entrada);
-                    break;
-                case 2: resultado = msParaKmh(entrada);
-                    break;
-                case 3: resultado = kmhParaMph(entrada);
-                    break;
-                case 4: resultado = mphParaKmh(entrada);
-                    break;
-                case 5: resultado = mphParaMs(entrada);
-                    break;
-                case 6: resultado = msParaMph(entrada);
-                    break;
-                default:
-                    printf("Opção invalida\n");
-                    return; 
-            }
-            
-            printf("Resultado: %.2lf\n", resultado);
-            break;
-
-        case 6:
-            break;
-        
-        case 7:
-            break;
-
-        case 8: //tempo
-            printf("\n escolha a conversão que deseja realizar: \n");
-            printf("1. segundos para minutos\n");
-            printf("2. minutos para segundos\n");
-            printf("3. minutos para horas\n");
-            printf("4. horas para minutos\n");
-            printf("5. segundos para horas\n");
-            printf("6. horas para segundos\n");
-            scanf("%d", &subcategoria);
-
-            printf("digite o valor na unidade informada: \n");
-            scanf("%lf", &entrada);
-
-            switch (subcategoria) {
-                case 1: resultado = segundosParaMinutos(entrada);
-                    break;
-                case 2: resultado = minutosParaSegundos(entrada);
-                    break;
-                case 3: resultado = minutosParaHoras(entrada);
-                    break;
-                case 4: resultado = horasParaMinutos(entrada);
-                    break;
-                case 5: resultado = segundosParaHoras(entrada);
-                    break;
-                case 6: resultado = horasParaSegundos(entrada);
-                    break;
-                default: 
-                    printf("Opção invalida\n"); 
-                    return; 
-            }
-            printf("Resultado: %.2lf\n", resultado);
-            break;
-
-        //adicionem os outros cases
-        case 9:
-            break;
-
-        default:
-            printf("Opção invalida\n");
+    switch (opcao)
+    {
+    case 1:
+        printf("Digite o valor em metros: ");
+        scanf("%lf", &valor);
+        printf("\n%.2lf Metros = %.2lf Centimetros\n", valor, metrosParaCentimetros(valor));
+        break;
+    case 2:
+        printf("Digite o valor em metros: ");
+        scanf("%lf", &valor);
+        printf("\n%.2lf Metros = %.2lf Milimetros\n", valor, metrosParaMilimetros(valor));
+        break;
+    case 3:
+        printf("Digite o valor em centimetros: ");
+        scanf("%lf", &valor);
+        printf("\n%.2lf Centimetros = %.2lf Metros\n", valor, centimetrosParaMetros(valor));
+        break;
+    case 4:
+        printf("Digite o valor em centimetros: ");
+        scanf("%lf", &valor);
+        printf("\n%.2lf Centimetros = %.2lf Milimetros\n", valor, centimetrosParaMilimetros(valor));
+        break;
+    case 5:
+        printf("Digite o valor em milimetros: ");
+        scanf("%lf", &valor);
+        printf("\n%.2lf milimetros = %.2lf Metros\n", valor, milimetrosParaMetros(valor));
+        break;
+    case 6:
+        printf("Digite o valor em milimetros: ");
+        scanf("%lf", &valor);
+        printf("\n%.2lf milimetros = %.2lf Centimetros\n", valor, milimetrosParaCentimetros(valor));
+        break;
+    default:
+        printf("Opcao invalida.\n");
     }
 }
 
-int main() {
+// 3 - Função separada para as conversões de volume
+void conversaoVolume() {
+    int opcao;
+    double valor;
+
+    printf("\nEscolha o tipo de conversao de volume:\n");
+    printf("1. Litros para Mililitros\n");
+    printf("2. Mililitros para Litros\n");
+    printf("3. Metros Cúbicos para Litros\n");
+    printf("4. Litros para Metros Cúbicos\n");
+    printf("5. Centímetros Cúbicos para Litros\n");
+    printf("6. Litros para Centímetros Cúbicos\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+        case 1:
+            printf("Digite o valor em Litros: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Litros = %.2lf Mililitros\n", valor, litrosParaMililitros(valor));
+            break;
+        case 2:
+            printf("Digite o valor em Mililitros: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Mililitros = %.2lf Litros\n", valor, mililitrosParaLitros(valor));
+            break;
+        case 3:
+            printf("Digite o valor em Metros Cúbicos: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Metros Cúbicos = %.2lf Litros\n", valor, metrosCubicosParaLitros(valor));
+            break;
+        case 4:
+            printf("Digite o valor em Litros: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Litros = %.2lf Metros Cúbicos\n", valor, litrosParaMetrosCubicos(valor));
+            break;
+        case 5:
+            printf("Digite o valor em Centímetros Cúbicos: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Centímetros Cúbicos = %.2lf Litros\n", valor, centimetrosCubicosParaLitros(valor));
+            break;
+        case 6:
+            printf("Digite o valor em Litros: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Litros = %.2lf Centímetros Cúbicos\n", valor, litrosParaCentimetrosCubicos(valor));
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+}
+
+// 4 - Função para conversão de Temperatura
+void converterTemperatura() {
+    int unidadeEntrada, unidadeConversao;
+    float valorEntrada, valorConvertido;
+
+    printf("Escolha a unidade de entrada:\n");
+    printf("1. Celsius\n");
+    printf("2. Fahrenheit\n");
+    printf("3. Kelvin\n");
+    printf("Escolha uma opcao (1/2/3): ");
+    scanf("%d", &unidadeEntrada);
+
+    printf("Digite o valor a ser convertido: ");
+    scanf("%f", &valorEntrada);
+
+    printf("\nEscolha a unidade para conversao:\n");
+    printf("1. Celsius\n");
+    printf("2. Fahrenheit\n");
+    printf("3. Kelvin\n");
+    printf("Escolha uma opcao (1/2/3): ");
+    scanf("%d", &unidadeConversao);
+
+    // Realizando a conversao Temperatura
+    if (unidadeEntrada == 1) {
+        // Entrada em Celsius
+        if (unidadeConversao == 1) {
+            valorConvertido = valorEntrada;
+            printf("%.2f Celsius = %.2f Celsius\n", valorEntrada, valorConvertido);
+        } else if (unidadeConversao == 2) {
+            valorConvertido = (valorEntrada * 9/5) + 32;
+            printf("%.2f Celsius = %.2f Fahrenheit\n", valorEntrada, valorConvertido);
+        } else if (unidadeConversao == 3) {
+            valorConvertido = valorEntrada + 273.15;
+            printf("%.2f Celsius = %.2f Kelvin\n", valorEntrada, valorConvertido);
+        }
+    } else if (unidadeEntrada == 2) {
+        // Entrada em Fahrenheit
+        if (unidadeConversao == 1) {
+            valorConvertido = (valorEntrada - 32) * 5/9;
+            printf("%.2f Fahrenheit = %.2f Celsius\n", valorEntrada, valorConvertido);
+        } else if (unidadeConversao == 2) {
+            valorConvertido = valorEntrada;
+            printf("%.2f Fahrenheit = %.2f Fahrenheit\n", valorEntrada, valorConvertido);
+        } else if (unidadeConversao == 3) {
+            valorConvertido = (valorEntrada - 32) * 5/9 + 273.15;
+            printf("%.2f Fahrenheit = %.2f Kelvin\n", valorEntrada, valorConvertido);
+        }
+    } else if (unidadeEntrada == 3) {
+        // Entrada em Kelvin
+        if (unidadeConversao == 1) {
+            valorConvertido = valorEntrada - 273.15;
+            printf("%.2f Kelvin = %.2f Celsius\n", valorEntrada, valorConvertido);
+        } else if (unidadeConversao == 2) {
+            valorConvertido = (valorEntrada - 273.15) * 9/5 + 32;
+            printf("%.2f Kelvin = %.2f Fahrenheit\n", valorEntrada, valorConvertido);
+        } else if (unidadeConversao == 3) {
+            valorConvertido = valorEntrada;
+            printf("%.2f Kelvin = %.2f Kelvin\n", valorEntrada, valorConvertido);
+        }
+    } else {
+        printf("Opcao invalida!\n");
+    }
+}
+
+// 5 - Função para conversão de Velocidade
+void conversaoVelocidade() {
+    int opcao;
+    double valor;
+
+    printf("\nEscolha o tipo de conversao de velocidade:\n");
+    printf("1. Km/h para m/s\n");
+    printf("2. m/s para Km/h\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+        case 1:
+            printf("Digite o valor em Km/h: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Km/h = %.2lf m/s\n", valor, kmhParaMs(valor));
+            break;
+        case 2:
+            printf("Digite o valor em m/s: ");
+            scanf("%lf", &valor);
+            printf("%.2lf m/s = %.2lf Km/h\n", valor, msParaKmh(valor));
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+}
+
+// Função para conversão de Tempo
+void conversaoTempo() {
+    int opcao;
+    double valor;
+
+    printf("\nEscolha o tipo de conversao de tempo:\n");
+    printf("1. Segundos para minutos\n");
+    printf("2. Minutos para segundos\n");
+    printf("3. Minutos para horas\n");
+    printf("4. Horas para minutos\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+        case 1:
+            printf("Digite o valor em segundos: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Segundos = %.2lf Minutos\n", valor, segundosParaMinutos(valor));
+            break;
+        case 2:
+            printf("Digite o valor em minutos: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Minutos = %.2lf Segundos\n", valor, minutosParaSegundos(valor));
+            break;
+        case 3:
+            printf("Digite o valor em minutos: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Minutos = %.2lf Horas\n", valor, minutosParaHoras(valor));
+            break;
+        case 4:
+            printf("Digite o valor em horas: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Horas = %.2lf Minutos\n", valor, horasParaMinutos(valor));
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+}
+
+// Função principal
+int main()
+{
     int categoria;
 
-    do {
-        informarCategorias();
-        printf("Digite a categoria desejada: \n");
+    do
+    {
+        printf("\nEscolha a categoria de conversao:\n");
+        printf("1. Comprimento\n");
+        printf("2. Massa\n");
+        printf("3. Volume\n");
+        printf("4. Temperatura\n");
+        printf("5. Velocidade\n");
+        printf("6. Potência\n");
+        printf("7. Área\n");
+        printf("8. Tempo\n");
+        printf("9. Armazenamento\n");
+        printf("0. Sair\n");
         scanf("%d", &categoria);
 
-        if (categoria == 0) {
-            printf("Saindo...\n");
-            break;
+        switch (categoria)
+        {
+            case 1:
+                conversaoComprimento(); // Chama a função separada para comprimento
+                break;
+            case 2:
+                // Aqui iriam as opções de conversões de massa
+                break;
+            case 3:
+                conversaoVolume(); // Chama a função separada para volume
+                break;
+            case 4:
+                converterTemperatura(); // Chama a função separada para Temperatura
+                break;
+            case 5:
+                conversaoVelocidade(); // Chama a função separada para Velocidade
+                break;
+            case 8:
+                conversaoTempo(); // Chama a função separada para Tempo
+                break;
+            case 0:
+                printf("Saindo...\n");
+                break;
+            default:
+                printf("Opção inválida.\n");
         }
-
-        processarCategorias(categoria);
 
     } while (categoria != 0);
 
