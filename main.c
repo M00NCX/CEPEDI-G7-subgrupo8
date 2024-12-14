@@ -283,6 +283,45 @@ void conversaoTempo() {
             printf("Opção inválida.\n");
     }
 }
+// 6- Função para conversão de Massa
+void conversaoMassa() {
+    int opcao;
+    double valor;
+
+    printf("\nEscolha o tipo de conversão de massa:\n");
+    printf("1. Quilograma (kg) para Grama (g)\n");
+    printf("2. Quilograma (kg) para Tonelada (t)\n");
+    printf("3. Grama (g) para Quilograma (kg)\n");
+    printf("4. Tonelada (t) para Quilograma (kg)\n");
+    printf("Opção: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            printf("Digite o valor em Quilogramas (kg): ");
+            scanf("%lf", &valor);
+            printf("%.2lf kg = %.2lf g\n", valor, quilogramasParaGramas(valor));
+            break;
+        case 2:
+            printf("Digite o valor em Quilogramas (kg): ");
+            scanf("%lf", &valor);
+            printf("%.2lf kg = %.2lf t\n", valor, quilogramasParaToneladas(valor));
+            break;
+        case 3:
+            printf("Digite o valor em Gramas (g): ");
+            scanf("%lf", &valor);
+            printf("%.2lf g = %.2lf kg\n", valor, gramasParaQuilogramas(valor));
+            break;
+        case 4:
+            printf("Digite o valor em Toneladas (t): ");
+            scanf("%lf", &valor);
+            printf("%.2lf t = %.2lf kg\n", valor, toneladasParaQuilogramas(valor));
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+}
+
 
 // Função principal
 int main()
@@ -297,6 +336,7 @@ int main()
         printf("3. Temperatura\n");
         printf("4. Velocidade\n");
         printf("5. Tempo\n");
+        printf("6. Massa\n");
         printf("0. Sair\n");
         scanf("%d", &categoria);
 
@@ -317,7 +357,9 @@ int main()
             case 5:
                 conversaoTempo(); // Chama a função separada para Tempo
                 break;
-           
+            case 6: 
+                conversaoMassa(); // Chama a função separada para Massa
+                break;
             case 0:
                 printf("Saindo...\n");
                 break;
