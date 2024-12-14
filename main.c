@@ -293,14 +293,10 @@ int main()
     {
         printf("\nEscolha a categoria de conversao:\n");
         printf("1. Comprimento\n");
-        printf("2. Massa\n");
-        printf("3. Volume\n");
-        printf("4. Temperatura\n");
-        printf("5. Velocidade\n");
-        printf("6. Potência\n");
-        printf("7. Área\n");
-        printf("8. Tempo\n");
-        printf("9. Armazenamento\n");
+        printf("2. Volume\n");
+        printf("3. Temperatura\n");
+        printf("4. Velocidade\n");
+        printf("5. Tempo\n");
         printf("0. Sair\n");
         scanf("%d", &categoria);
 
@@ -310,20 +306,18 @@ int main()
                 conversaoComprimento(); // Chama a função separada para comprimento
                 break;
             case 2:
-                // Aqui iriam as opções de conversões de massa
-                break;
-            case 3:
                 conversaoVolume(); // Chama a função separada para volume
                 break;
-            case 4:
+            case 3:
                 converterTemperatura(); // Chama a função separada para Temperatura
                 break;
-            case 5:
+            case 4:
                 conversaoVelocidade(); // Chama a função separada para Velocidade
                 break;
-            case 8:
+            case 5:
                 conversaoTempo(); // Chama a função separada para Tempo
                 break;
+           
             case 0:
                 printf("Saindo...\n");
                 break;
