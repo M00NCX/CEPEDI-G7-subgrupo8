@@ -33,8 +33,12 @@ double kmhParaMs(double kmh) { return kmh / 3.6; }
 double msParaKmh(double ms) { return ms * 3.6; }
 
 // potência
-double wattsParaQuilowatts(double w) { return w / 1000; }
-double quilowattsParaWatts(double kw) { return kw * 1000; }
+double WattsParaKwatts(double w) { return w / 1000; }
+double WattsParaCV(double w) { return w / 1000; }
+double KwattsParaWatts(double kw) { return kw * 1000; }
+double KwattsParaCV(double kw) { return kw * 1000; }
+double CVParaWatts(double kw) { return kw * 1000; }
+double CVParaKwatts(double kw) { return kw * 1000; }
 
 // área
 double metroQuadradoParaCentimetroQuadrado(double m2) { return m2 * 10000; }
@@ -239,6 +243,57 @@ void conversaoVelocidade() {
             printf("Digite o valor em m/s: ");
             scanf("%lf", &valor);
             printf("%.2lf m/s = %.2lf Km/h\n", valor, msParaKmh(valor));
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+}
+
+// 6 - Função para conversão de Potência
+void conversaoPotencia() {
+    int opcao;
+    double valor;
+
+    printf("\nEscolha o tipo de conversao de potencia:\n");
+    printf("1. Watts para kWatts");
+    printf("2. Watts para cv");
+    printf("3. kWatts para Watts");
+    printf("4. kWatts para cv");
+    printf("5. cv para Watts");
+    printf("6. cv para kWatts");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+        case 1:
+            printf("Digite o valor em Watts: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Watts = %.2lf kWatts\n", valor, WattsParaKwatts(valor));
+            break;
+        case 2:
+            printf("Digite o valor em Watts: ");
+            scanf("%lf", &valor);
+            printf("%.2lf Watts = %.2lf cv\n", valor, WattsParaCV(valor));
+            break;
+        case 3:
+            printf("Digite o valor em kWatts: ");
+            scanf("%lf", &valor);
+            printf("%.2lf kWatts = %.2lf Watts\n", valor, KwattsParaWatts(valor));
+            break;
+         case 4:
+            printf("Digite o valor em kWatts: ");
+            scanf("%lf", &valor);
+            printf("%.2lf kWatts = %.2lf cv\n", valor, KwattsParaCV(valor));
+            break;
+        case 5:
+            printf("Digite o valor em cv: ");
+            scanf("%lf", &valor);
+            printf("%.2lf cv = %.2lf Watts\n", valor, CVParaWatts(valor));
+            break;
+        case 6:
+            printf("Digite o valor em cv: ");
+            scanf("%lf", &valor);
+            printf("%.2lf cv = %.2lf kWatts\n", valor, CVParaKwatts(valor));
             break;
         default:
             printf("Opção inválida.\n");
