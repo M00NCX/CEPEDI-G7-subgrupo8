@@ -20,6 +20,7 @@ O programa permite realizar conversões de várias unidades de medida, como **co
 - **Conversões de Velocidade**: km/h, m/s, mph.
 - **Conversões de Tempo**: segundos, minutos, horas.
 - **Conversões de Massa**: Quilogramas, gramas, toneladas.
+- **Conversões de Potência**: Watts, kWatts, cavalo a vapor.
 
 
 O programa oferece uma interface simples que permite ao usuário escolher o tipo de conversão e inserir o valor desejado. O valor convertido será exibido de forma clara e precisa.
