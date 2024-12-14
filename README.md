@@ -67,5 +67,5 @@ A equipe foi formada por membros com as seguintes responsabilidades:
 - **Rodrigo Ferraz** – Auxílio no desenvolvimento das funções de tempo e Velocidades.
 - **Leonardo Jonatan** –Implementação de conversões de unidades de volume. Testes e correções de bugs.
 - **Luis Mario** - Implementação de conversões de Massa.
-- **Ary Allan Souza Lins** - Implementação de conversões de Potências.
+- **Ary Allan** - Implementação de conversões de Potências.
 
