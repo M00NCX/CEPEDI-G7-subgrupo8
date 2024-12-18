@@ -115,10 +115,10 @@ void conversaoVolume() {
     printf("\nEscolha o tipo de conversao de volume:\n");
     printf("1. Litros para Mililitros\n");
     printf("2. Mililitros para Litros\n");
-    printf("3. Metros Cúbicos para Litros\n");
-    printf("4. Litros para Metros Cúbicos\n");
-    printf("5. Centímetros Cúbicos para Litros\n");
-    printf("6. Litros para Centímetros Cúbicos\n");
+    printf("3. Metros Cubicos para Litros\n");
+    printf("4. Litros para Metros Cubicos\n");
+    printf("5. Centimetros Cubicos para Litros\n");
+    printf("6. Litros para Centimetros Cubicos\n");
     scanf("%d", &opcao);
 
     switch (opcao)
@@ -134,19 +134,19 @@ void conversaoVolume() {
             printf("%.2lf Mililitros = %.2lf Litros\n", valor, mililitrosParaLitros(valor));
             break;
         case 3:
-            printf("Digite o valor em Metros Cúbicos: ");
+            printf("Digite o valor em Metros Cubicos: ");
             scanf("%lf", &valor);
             printf("%.2lf Metros Cúbicos = %.2lf Litros\n", valor, metrosCubicosParaLitros(valor));
             break;
         case 4:
             printf("Digite o valor em Litros: ");
             scanf("%lf", &valor);
-            printf("%.2lf Litros = %.2lf Metros Cúbicos\n", valor, litrosParaMetrosCubicos(valor));
+            printf("%.2lf Litros = %.2lf Metros Cubicos\n", valor, litrosParaMetrosCubicos(valor));
             break;
         case 5:
-            printf("Digite o valor em Centímetros Cúbicos: ");
+            printf("Digite o valor em Centimetros Cubicos: ");
             scanf("%lf", &valor);
-            printf("%.2lf Centímetros Cúbicos = %.2lf Litros\n", valor, centimetrosCubicosParaLitros(valor));
+            printf("%.2lf Centimetros Cubicos = %.2lf Litros\n", valor, centimetrosCubicosParaLitros(valor));
             break;
         case 6:
             printf("Digite o valor em Litros: ");
@@ -154,7 +154,7 @@ void conversaoVolume() {
             printf("%.2lf Litros = %.2lf Centímetros Cúbicos\n", valor, litrosParaCentimetrosCubicos(valor));
             break;
         default:
-            printf("Opção inválida.\n");
+            printf("Opcao invalida.\n");
     }
 }
 
@@ -245,7 +245,7 @@ void conversaoVelocidade() {
             printf("%.2lf m/s = %.2lf Km/h\n", valor, msParaKmh(valor));
             break;
         default:
-            printf("Opção inválida.\n");
+            printf("Opcao invalida.\n");
     }
 }
 
@@ -296,7 +296,7 @@ void conversaoPotencia() {
             printf("%.2lf cv = %.2lf kWatts\n", valor, CVParaKwatts(valor));
             break;
         default:
-            printf("Opção inválida.\n");
+            printf("Opcao invalida.\n");
     }
 }
 
@@ -335,7 +335,7 @@ void conversaoTempo() {
             printf("%.2lf Horas = %.2lf Minutos\n", valor, horasParaMinutos(valor));
             break;
         default:
-            printf("Opção inválida.\n");
+            printf("Opcao invalida.\n");
     }
 }
 // 6- Função para conversão de Massa
@@ -373,7 +373,7 @@ void conversaoMassa() {
             printf("%.2lf t = %.2lf kg\n", valor, toneladasParaQuilogramas(valor));
             break;
         default:
-            printf("Opção inválida.\n");
+            printf("Opcao invalida.\n");
     }
 }
 
@@ -419,7 +419,7 @@ int main()
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Opção inválida.\n");
+                printf("Opcao invalida.\n");
         }
 
     } while (categoria != 0);
