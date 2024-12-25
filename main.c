@@ -37,8 +37,8 @@ double WattsParaKwatts(double w) { return w / 1000; }
 double WattsParaCV(double w) { return w / 735.5; }
 double KwattsParaWatts(double kw) { return kw / 1000; }
 double KwattsParaCV(double kw) { return (kw / 1000)/735.5; }
-double CVParaWatts(double kw) { return cv * 735.5; }
-double CVParaKwatts(double kw) { return cv * 1000 * 735.5; }
+double CVParaWatts(double cv) { return cv * 735.5; }
+double CVParaKwatts(double cv) { return cv * 1000 * 735.5; }
 
 // área
 double metroQuadradoParaCentimetroQuadrado(double m2) { return m2 * 10000; }
@@ -348,7 +348,7 @@ void conversaoMassa() {
     printf("2. Quilograma (kg) para Tonelada (t)\n");
     printf("3. Grama (g) para Quilograma (kg)\n");
     printf("4. Tonelada (t) para Quilograma (kg)\n");
-    printf("Opção: ");
+    printf("Opcao: ");
     scanf("%d", &opcao);
 
     switch (opcao) {
