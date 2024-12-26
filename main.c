@@ -62,7 +62,7 @@ double gigabytesParaMegabytes(double gb) { return gb * 1024; }
 double gigabytesParaTerabytes(double gb) { return gb / 1024; }
 double terabytesParaGigabytes(double tb) { return tb * 1024; }
 
-// 1 - Função separada para as conversões de comprimento
+// Função separada para as conversões de comprimento
 void conversaoComprimento()
 {
     int opcao;
@@ -114,7 +114,7 @@ void conversaoComprimento()
     }
 }
 
-// 3 - Função separada para as conversões de volume
+// Função separada para as conversões de volume
 void conversaoVolume()
 {
     int opcao;
@@ -166,7 +166,7 @@ void conversaoVolume()
     }
 }
 
-// 4 - Função para conversão de Temperatura
+// Função para conversão de Temperatura
 void converterTemperatura()
 {
     int unidadeEntrada, unidadeConversao;
@@ -253,7 +253,7 @@ void converterTemperatura()
     }
 }
 
-// 5 - Função para conversão de Velocidade
+// Função para conversão de Velocidade
 void conversaoVelocidade()
 {
     int opcao;
@@ -281,7 +281,7 @@ void conversaoVelocidade()
     }
 }
 
-// 6 - Função para conversão de Potência
+// Função para conversão de Potência
 void conversaoPotencia()
 {
     int opcao;
@@ -372,7 +372,7 @@ void conversaoTempo()
         printf("Opcao invalida.\n");
     }
 }
-// 6- Função para conversão de Massa
+// Função para conversão de Massa
 void conversaoMassa()
 {
     int opcao;
@@ -412,6 +412,7 @@ void conversaoMassa()
         printf("Opcao invalida.\n");
     }
 }
+// Função para conversão de Armazenamento
 
 void conversaoArmazenamento()
 {
@@ -471,6 +472,34 @@ void conversaoArmazenamento()
         break;
     }
 }
+//  Função para conversão de Area
+
+void conversaoArea()
+{
+    int opcao;
+    double valor;
+
+    printf("\nEscolha o tipo de conversao de area:\n");
+    printf("1. Metros quadrados para Centimetros quadrados\n");
+    printf("2. Centimetros quadrados para Metros quadrados\n");
+    scanf("%d", &opcao);
+
+    printf("Digite o valor para conversao: ");
+    scanf("%lf", &valor);
+
+    switch (opcao)
+    {
+    case 1:
+        printf("%.4lf Metros quadrados = %.4lf Centimetros quadrados\n", valor, metroQuadradoParaCentimetroQuadrado(valor));
+        break;
+    case 2:
+        printf("%.4lf Centimetros quadrados = %.4lf Metros quadrados\n", valor, centimetroQuadradoParaMetroQuadrado(valor));
+        break;
+    default:
+        printf("Opcao invalida.\n");
+        break;
+    }
+}
 
 // Função principal
 int main()
@@ -488,6 +517,7 @@ int main()
         printf("6. Massa\n");
         printf("7. Armazenamento\n");
         printf("8. Potencia \n");
+        printf("9. Area \n");
         printf("0. Sair\n");
         scanf("%d", &categoria);
 
@@ -516,6 +546,9 @@ int main()
             break;
         case 8:
             conversaoPotencia(); // Chama a função separada para Potencia
+            break;
+        case 9:
+            conversaoArea(); // Chama a função separada para Area
             break;
         case 0:
             printf("Saindo...\n");
