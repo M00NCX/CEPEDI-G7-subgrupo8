@@ -21,6 +21,8 @@ O programa permite realizar conversões de várias unidades de medida, como **co
 - **Conversões de Tempo**: segundos, minutos, horas.
 - **Conversões de Massa**: Quilogramas, gramas, toneladas.
 - **Conversões de Potência**: Watts, kWatts, cavalo a vapor.
+- **Conversões de Armazenamento**: Bytes, kilobytes, megabytes, gigabytes e terabytes.
+- **Conversões de Área**: metro quadrado, centímetro quadrado. 
 
 
 O programa oferece uma interface simples que permite ao usuário escolher o tipo de conversão e inserir o valor desejado. O valor convertido será exibido de forma clara e precisa.
@@ -69,4 +71,5 @@ A equipe foi formada por membros com as seguintes responsabilidades:
 - **Leonardo Jonatan** –Implementação de conversões de unidades de volume. Testes e correções de bugs.
 - **Luis Mario** - Implementação de conversões de Massa.
 - **Ary Allan** - Implementação de conversões de Potências.
+- **Lívia Cunha** - Implementação de conversões de armazenamento.
 
